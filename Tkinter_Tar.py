@@ -35,7 +35,12 @@ def uus_aken(ind:int):
         tab[i]=Frame(tabs)
         tabs.add(tab[i],text=texts[i])
         tab[i].bind("<Button-1>",tab_valik(i))
-
+        cann.append("cann" +str(i))
+        cann[i]=Canvas(tab[i],height=300,width=300,bg='gold') 
+        img[i]=PhotoImage(file=img[i])
+        cann[i].create_image(0,0,image=img[i],anchor=NW) 
+        
+        cann[i].pack()
     tabs.grid(row=0,column=0) 
     tabs.select(ind)
 
